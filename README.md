@@ -8,7 +8,7 @@ Unlike say UINavigationController there is no stack or other collection of view 
 
 	let sequenceViewController = SequenceViewController()
 	// Add sequenceViewController to your view and view controller
-	// hierarchy either programmatically of with a xib / storyboard.
+	// hierarchy either programmatically or using a xib or storyboard.
 
 	// Make any view controller you like.
 	let viewController = UIViewController()
