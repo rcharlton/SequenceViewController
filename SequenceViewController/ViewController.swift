@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(tapRecognizer)
 
         let anyViewController = makeViewController()
-        sequenceViewController.sequenceViewController(anyViewController)
+        sequenceViewController.sequence(viewController: anyViewController)
     }
 
     /**
@@ -43,21 +43,12 @@ class ViewController: UIViewController {
      */
     private func setupSequenceViewController() {
 
+        let sequenceView = sequenceViewController.view!
+        sequenceView.frame = self.view.bounds
+
         addChildViewController(sequenceViewController)
 		sequenceViewController.didMove(toParentViewController: self)
-
-        let sequenceView = sequenceViewController.view!
-        sequenceView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(sequenceView)
-
-        sequenceView.leftAnchor.constraint(
-            equalTo: view.layoutMarginsGuide.leftAnchor).isActive = true
-        sequenceView.rightAnchor.constraint(
-            equalTo: view.layoutMarginsGuide.rightAnchor).isActive = true
-        sequenceView.topAnchor.constraint(
-            equalTo: topLayoutGuide.bottomAnchor).isActive = true
-        sequenceView.bottomAnchor.constraint(
-            equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
     }
 
     /**
@@ -71,8 +62,8 @@ class ViewController: UIViewController {
             let direction: Direction = (point.x < view.frame.midX) ? .backwards : .forwards
 
             let anyViewController = makeViewController()
-            sequenceViewController.sequenceViewController(
-                anyViewController,
+            sequenceViewController.sequence(
+                viewController: anyViewController,
                 direction: direction,
                 animated: true)
         }

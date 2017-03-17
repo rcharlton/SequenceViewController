@@ -16,8 +16,8 @@ Unlike say UINavigationController there is no stack or other collection of view 
 	viewControllere.view.backgroundColor = UIColor.cyan
 
 	// Present it.
-    sequenceViewController.sequenceViewController(
-        viewController,
+    sequenceViewController.sequence(
+        viewController: viewController,
         direction: .forwards,
         animated: true)
 		

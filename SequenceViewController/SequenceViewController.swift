@@ -48,8 +48,8 @@ class SequenceViewController: UIViewController {
                                  If nil, any existing sequenced controller is
                                  transitioned out.
      */
-    func sequenceViewController(_ viewController: UIViewController?) {
-        sequenceViewController(viewController, direction: .forwards, animated: false)
+    func sequence(viewController: UIViewController?) {
+        sequence(viewController: viewController, direction: .forwards, animated: false)
     }
 
     /**
@@ -70,8 +70,8 @@ class SequenceViewController: UIViewController {
      - parameter completion:     The block to execute after the presentation 
                                  finishes. May be nil.
      */
-    func sequenceViewController(
-        _ viewController: UIViewController?,
+    func sequence(
+        viewController: UIViewController?,
         direction: Direction,
         animated: Bool,
         completion: (() -> Void)? = nil) {
