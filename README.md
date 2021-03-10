@@ -6,19 +6,19 @@ Demo of a custom container view controller.
 Unlike `UINavigationController` there is no stack or other collection of view controllers. A sequenced view controller's lifetime is nothing more than its screen-time. `SequenceViewController` can form the basis of a dynamic onboarding UX or other "card" style interface.
 
 ```swift
-	let sequenceViewController = SequenceViewController()
-	// Add sequenceViewController to your view and view controller
-	// hierarchy either programmatically or using a xib or storyboard.
+let sequenceViewController = SequenceViewController()
+// Add sequenceViewController to your view and view controller
+// hierarchy either programmatically or using a xib or storyboard.
 
-	// Make any view controller you like.
-	let viewController = UIViewController()
-	viewController.view.frame = sequenceViewController.view.bounds
-	viewControllere.view.backgroundColor = UIColor.cyan
+// Make any view controller you like.
+let viewController = UIViewController()
+viewController.view.frame = sequenceViewController.view.bounds
+viewControllere.view.backgroundColor = UIColor.cyan
 
-	// Present it.
-    sequenceViewController.sequence(
-        viewController: viewController,
-        direction: .forwards,
-        animated: true
-	)
+// Present it.
+sequenceViewController.sequence(
+    viewController: viewController,
+    direction: .forwards,
+    animated: true
+)
 ```
